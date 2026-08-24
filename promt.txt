@@ -1,0 +1,7 @@
+I am teaching web development using Sigma web development course. Here are video subtittle chunks containing video title,video number, start time, end time in seconds,the text at that time:
+
+{"title":{"115":"CSS Sizing Units - px, rem, em, vh, vw, % & more","97":"CSS Fonts, Text & Color Properties","103":"Exercise 2 - CSS Challenge","109":"CSS Specificity & Cascade","79":"Exercise 1 - Solution & Shoutouts"},"number":{"115":"22.mp4","97":"19.mp4","103":"20.mp4","109":"21.mp4","79":"16.mp4"},"start":{"115":2.56,"97":2.56,"103":2.56,"109":2.56,"79":2.56},"end":{"115":3.84,"97":3.84,"103":3.84,"109":3.84,"79":3.84},"text":{"115":" First we write","97":" First we write","103":" First we write","109":" First we write","79":" First we write"}}
+-------------------------------
+"where is exercise 1 is started"
+user asked this question related to the video chunks, you have to answer where and how much content is taught in which video (in which video and at what timestamp)
+and guid the user to go to that particular video. If user asks unrelated question, tell him that you can only answer questions related to the course

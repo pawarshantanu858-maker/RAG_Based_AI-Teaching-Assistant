@@ -1,0 +1,288 @@
+[
+    {
+        "label": "whisper",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "whisper",
+        "description": "whisper",
+        "detail": "whisper",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "cosine_similarity",
+        "importPath": "sklearn.metrics.pairwise",
+        "description": "sklearn.metrics.pairwise",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics.pairwise",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "unused.stt",
+        "description": "unused.stt",
+        "peekOfCode": "model = whisper.load_model(\"small\")\nresult = model.transcribe(audio =\"audios/sample.mp3\",\n                          language = \"hi\",\n                          task = \"translate\",\n                          word_timestamps = False)\nprint(result[\"segments\"])\nchunks = []\nfor segment in result[\"segments\"]:\n    chunk = {\n        \"id\": segment[\"id\"],",
+        "detail": "unused.stt",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 5,
+        "importPath": "unused.stt",
+        "description": "unused.stt",
+        "peekOfCode": "result = model.transcribe(audio =\"audios/sample.mp3\",\n                          language = \"hi\",\n                          task = \"translate\",\n                          word_timestamps = False)\nprint(result[\"segments\"])\nchunks = []\nfor segment in result[\"segments\"]:\n    chunk = {\n        \"id\": segment[\"id\"],\n        \"seek\": segment[\"seek\"],",
+        "detail": "unused.stt",
+        "documentation": {}
+    },
+    {
+        "label": "chunks",
+        "kind": 5,
+        "importPath": "unused.stt",
+        "description": "unused.stt",
+        "peekOfCode": "chunks = []\nfor segment in result[\"segments\"]:\n    chunk = {\n        \"id\": segment[\"id\"],\n        \"seek\": segment[\"seek\"],\n        \"start\": segment[\"start\"],\n        \"end\": segment[\"end\"],\n        \"text\": segment[\"text\"],\n    }\n    chunks.append(chunk)",
+        "detail": "unused.stt",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "mp3_to_json",
+        "description": "mp3_to_json",
+        "peekOfCode": "model = whisper.load_model(\"small\")\naudios = os.listdir(\"audios\")\nfor audio in audios:\n    print(audio)\n    if(\"_\" in audio):\n        number = audio.split(\"_\")[0]\n        title = audio.split(\"_\")[1][:-4]\n        print(number, title)\n        # result = model.transcribe(audio =f\"audios/{audios}.mp3\",\n        result = model.transcribe(audio =f\"audios/sample.mp3\",",
+        "detail": "mp3_to_json",
+        "documentation": {}
+    },
+    {
+        "label": "audios",
+        "kind": 5,
+        "importPath": "mp3_to_json",
+        "description": "mp3_to_json",
+        "peekOfCode": "audios = os.listdir(\"audios\")\nfor audio in audios:\n    print(audio)\n    if(\"_\" in audio):\n        number = audio.split(\"_\")[0]\n        title = audio.split(\"_\")[1][:-4]\n        print(number, title)\n        # result = model.transcribe(audio =f\"audios/{audios}.mp3\",\n        result = model.transcribe(audio =f\"audios/sample.mp3\",\n                                  language = \"hi\",",
+        "detail": "mp3_to_json",
+        "documentation": {}
+    },
+    {
+        "label": "create_embedding",
+        "kind": 2,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "def create_embedding(text_list):\n    r =requests.post(\"http://localhost:11434/api/embed\", json={\n        \"model\":\"bge-m3\",\n        \"input\":text_list})\n    embedding = r.json()[\"embeddings\"]\n    return embedding\ndef inference(prompt):\n    r = requests.post(\"http://localhost:11434/api/generate\", json={\n        \"model\":\"llama3.1\",\n        \"prompt\":prompt,",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "inference",
+        "kind": 2,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "def inference(prompt):\n    r = requests.post(\"http://localhost:11434/api/generate\", json={\n        \"model\":\"llama3.1\",\n        \"prompt\":prompt,\n        \"stream\":False\n        })\n    response = r.json()\n    print(response)\n    return response\ndf = joblib.load('embedding .joblib')",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "df = joblib.load('embedding .joblib')\nincoming_query = input(\"ask a question: \")\nquestion_embedding = create_embedding([incoming_query])[0]\n#find similarity between the question embedding and the chunk embeddings \n# print(np.vstack(df ['embedding'].values))\n# print(np.vstack(df ['embedding'].shape))\nsimilarities = cosine_similarity(np.vstack(df ['embedding']),[question_embedding]).flatten()\n# print (similarities)\ntop_results = 5\nmax_index = similarities.argsort()[::-1][0:top_results] #top 3 most similar chunks",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "incoming_query",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "incoming_query = input(\"ask a question: \")\nquestion_embedding = create_embedding([incoming_query])[0]\n#find similarity between the question embedding and the chunk embeddings \n# print(np.vstack(df ['embedding'].values))\n# print(np.vstack(df ['embedding'].shape))\nsimilarities = cosine_similarity(np.vstack(df ['embedding']),[question_embedding]).flatten()\n# print (similarities)\ntop_results = 5\nmax_index = similarities.argsort()[::-1][0:top_results] #top 3 most similar chunks\n# print (max_index)",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "question_embedding",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "question_embedding = create_embedding([incoming_query])[0]\n#find similarity between the question embedding and the chunk embeddings \n# print(np.vstack(df ['embedding'].values))\n# print(np.vstack(df ['embedding'].shape))\nsimilarities = cosine_similarity(np.vstack(df ['embedding']),[question_embedding]).flatten()\n# print (similarities)\ntop_results = 5\nmax_index = similarities.argsort()[::-1][0:top_results] #top 3 most similar chunks\n# print (max_index)\nnew_df = df.loc[max_index]",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "similarities",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "similarities = cosine_similarity(np.vstack(df ['embedding']),[question_embedding]).flatten()\n# print (similarities)\ntop_results = 5\nmax_index = similarities.argsort()[::-1][0:top_results] #top 3 most similar chunks\n# print (max_index)\nnew_df = df.loc[max_index]\n# print (new_df[[\"title\",\"number\",\"text\"]])\nprompt = f'''I am teaching web development using Sigma web development course. Here are video subtittle chunks containing video title,video number, start time, end time in seconds,the text at that time:\n{new_df[[\"title\",\"number\",\"start\",\"end\",\"text\"]].to_json(orient=\"records\")}\n-------------------------------",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "top_results",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "top_results = 5\nmax_index = similarities.argsort()[::-1][0:top_results] #top 3 most similar chunks\n# print (max_index)\nnew_df = df.loc[max_index]\n# print (new_df[[\"title\",\"number\",\"text\"]])\nprompt = f'''I am teaching web development using Sigma web development course. Here are video subtittle chunks containing video title,video number, start time, end time in seconds,the text at that time:\n{new_df[[\"title\",\"number\",\"start\",\"end\",\"text\"]].to_json(orient=\"records\")}\n-------------------------------\n\"{incoming_query}\"\nuser asked this question related to the video chunks, you have to answer where and how much content is taught in which video (in which video and at what timestamp)",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "max_index",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "max_index = similarities.argsort()[::-1][0:top_results] #top 3 most similar chunks\n# print (max_index)\nnew_df = df.loc[max_index]\n# print (new_df[[\"title\",\"number\",\"text\"]])\nprompt = f'''I am teaching web development using Sigma web development course. Here are video subtittle chunks containing video title,video number, start time, end time in seconds,the text at that time:\n{new_df[[\"title\",\"number\",\"start\",\"end\",\"text\"]].to_json(orient=\"records\")}\n-------------------------------\n\"{incoming_query}\"\nuser asked this question related to the video chunks, you have to answer where and how much content is taught in which video (in which video and at what timestamp)\nand guid the user to go to that particular video. If user asks unrelated question, tell him that you can only answer questions related to the course",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "new_df",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "new_df = df.loc[max_index]\n# print (new_df[[\"title\",\"number\",\"text\"]])\nprompt = f'''I am teaching web development using Sigma web development course. Here are video subtittle chunks containing video title,video number, start time, end time in seconds,the text at that time:\n{new_df[[\"title\",\"number\",\"start\",\"end\",\"text\"]].to_json(orient=\"records\")}\n-------------------------------\n\"{incoming_query}\"\nuser asked this question related to the video chunks, you have to answer where and how much content is taught in which video (in which video and at what timestamp)\nand guid the user to go to that particular video. If user asks unrelated question, tell him that you can only answer questions related to the course\n'''\nwith open(\"prompt.txt\",\"w\") as f:",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "prompt",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "prompt = f'''I am teaching web development using Sigma web development course. Here are video subtittle chunks containing video title,video number, start time, end time in seconds,the text at that time:\n{new_df[[\"title\",\"number\",\"start\",\"end\",\"text\"]].to_json(orient=\"records\")}\n-------------------------------\n\"{incoming_query}\"\nuser asked this question related to the video chunks, you have to answer where and how much content is taught in which video (in which video and at what timestamp)\nand guid the user to go to that particular video. If user asks unrelated question, tell him that you can only answer questions related to the course\n'''\nwith open(\"prompt.txt\",\"w\") as f:\n    f.write(prompt)\nresponse = inference(prompt)[\"response\"]",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "process_incoming",
+        "description": "process_incoming",
+        "peekOfCode": "response = inference(prompt)[\"response\"]\nprint(response) \nwith open(\"response.txt\",\"w\") as f:\n    f.write(response)\n# for index,item in new_df.iterrows():\n#     print (index , item[\"title\"], item[\"number\"], item[\"text\"],item[\"start\"],item[\"end\"])",
+        "detail": "process_incoming",
+        "documentation": {}
+    },
+    {
+        "label": "create_embedding",
+        "kind": 2,
+        "importPath": "process_json",
+        "description": "process_json",
+        "peekOfCode": "def create_embedding(text_list):\n    r =requests.post(\"http://localhost:11434/api/embed\", json={\"model\":\"bge-m3\",\"input\":text_list})\n    embedding = r.json()[\"embeddings\"]\n    return embedding\njsons = os.listdir(\"jsons\") #list all the jsons\nprint (jsons)\nmy_dicts = []\nchunk_id = 0\nfor json_file in jsons:\n    with open(f\"jsons/{json_file}\", \"r\") as f:",
+        "detail": "process_json",
+        "documentation": {}
+    },
+    {
+        "label": "jsons",
+        "kind": 5,
+        "importPath": "process_json",
+        "description": "process_json",
+        "peekOfCode": "jsons = os.listdir(\"jsons\") #list all the jsons\nprint (jsons)\nmy_dicts = []\nchunk_id = 0\nfor json_file in jsons:\n    with open(f\"jsons/{json_file}\", \"r\") as f:\n        content = json.load(f)\n    print(f\"Creating Embeddings for {json_file}\")\n    embeddings = create_embedding([c['text'] for c in content[\"chunks\"]])\n    for i,chunk in enumerate(content[\"chunks\"]):",
+        "detail": "process_json",
+        "documentation": {}
+    },
+    {
+        "label": "my_dicts",
+        "kind": 5,
+        "importPath": "process_json",
+        "description": "process_json",
+        "peekOfCode": "my_dicts = []\nchunk_id = 0\nfor json_file in jsons:\n    with open(f\"jsons/{json_file}\", \"r\") as f:\n        content = json.load(f)\n    print(f\"Creating Embeddings for {json_file}\")\n    embeddings = create_embedding([c['text'] for c in content[\"chunks\"]])\n    for i,chunk in enumerate(content[\"chunks\"]):\n        chunk['chunk_id'] = chunk_id\n        chunk['embedding'] = embeddings[i]",
+        "detail": "process_json",
+        "documentation": {}
+    },
+    {
+        "label": "chunk_id",
+        "kind": 5,
+        "importPath": "process_json",
+        "description": "process_json",
+        "peekOfCode": "chunk_id = 0\nfor json_file in jsons:\n    with open(f\"jsons/{json_file}\", \"r\") as f:\n        content = json.load(f)\n    print(f\"Creating Embeddings for {json_file}\")\n    embeddings = create_embedding([c['text'] for c in content[\"chunks\"]])\n    for i,chunk in enumerate(content[\"chunks\"]):\n        chunk['chunk_id'] = chunk_id\n        chunk['embedding'] = embeddings[i]\n        chunk_id += 1",
+        "detail": "process_json",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "process_json",
+        "description": "process_json",
+        "peekOfCode": "df = pd.DataFrame.from_records(my_dicts)\n#save this dataframe\njoblib.dump(df,'embedding .joblib')",
+        "detail": "process_json",
+        "documentation": {}
+    },
+    {
+        "label": "files",
+        "kind": 5,
+        "importPath": "video_to_mp3",
+        "description": "video_to_mp3",
+        "peekOfCode": "files = os.listdir(\"videos\")\nprint(files)\nfor file in files:\n    print(file)\n    tutorial_number = file.split(\" [\")[0].split(\"#\")[1]\n    print(tutorial_number)\n    file_name = file.split(\" _ \")[0]\n    print(tutorial_number,file_name)\n    subprocess.run(['ffmpeg', '-i', f'videos/{file}', f'audios/{tutorial_number}_{file_name}.mp3'])",
+        "detail": "video_to_mp3",
+        "documentation": {}
+    }
+]

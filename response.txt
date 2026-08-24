@@ -1,0 +1,13 @@
+Based on the provided video chunks, it seems that there is a mistake in the subtitles. All the subtitles have the same text "HTML tag" at the same timestamp (5.72-6.52 seconds). This text does not seem to be relevant to the video content.
+
+However, I can provide some general guidance on how to find the answer to the user's question.
+
+To find where HTML starts in the course, you can look at the video titles. From the provided chunks, I can see that there is no video with a title that mentions "HTML start". However, I can guide you to some related videos:
+
+* Video 22.mp4 has a title "CSS Sizing Units - px, rem, em, vh, vw, % & more". This video seems to be about CSS and does not directly relate to HTML.
+* Video 19.mp4 also has a title "CSS Fonts, Text & Color Properties". This video also seems to be about CSS and does not directly relate to HTML.
+* Video 20.mp4 has a title "Exercise 2 - CSS Challenge". This video seems to be about a CSS challenge and does not directly relate to HTML.
+* Video 21.mp4 has a title "CSS Specificity & Cascade". This video also seems to be about CSS and does not directly relate to HTML.
+* Video 15.mp4 has a title "Inline, Internal & External CSS". This video seems to be about CSS and does not directly relate to HTML.
+
+To find out where HTML is taught, I would need more information about the course or the provided video chunks.
